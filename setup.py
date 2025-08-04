@@ -24,7 +24,10 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/business-science/ai-data-science-team",
     packages=find_packages(),
-    install_requires=parse_requirements("requirements.txt"),
+    install_requires=parse_requirements("requirements.txt") + [
+    "ipython",  # Ensure IPython is always installed
+    "statsmodels"  # Ensure statsmodels is always installed
+],
     extras_require={
         "machine_learning": ["h2o", "mlflow"],
         "data_science": ["pytimetk", "missingno", "sweetviz"],
